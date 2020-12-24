@@ -9,7 +9,16 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Simple Hello World NodeJS app!!\n');
+  res.send('Node Js Microservice App');
+});
+
+app.get('/users', (req, res) => {
+  res.send([{
+    id: 1,
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30
+  }]);
 });
 
 var port = process.env.PORT||PORT;
